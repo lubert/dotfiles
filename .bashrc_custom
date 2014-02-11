@@ -1,0 +1,12 @@
+# Git aliases
+alias gs="git status"
+alias gch="git checkout"
+alias gb="git checkout -b"
+
+# grep
+alias grep="grep --color=auto"
+alias egrep="egrep --color=auto"
+alias fgrep="fgrep --color=auto"
+
+# mount
+alias mount="mount |column -t"
