@@ -163,7 +163,13 @@ shopt -s histappend
 # Make prompt informative
 # See:  http://www.ukuug.org/events/linux2003/papers/bash_tips/
 #PS1="\[\033[0;34m\][\u@\h:\w]$\[\033[0m\]"
-PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+function parse_git_branch {
+  ref=$(git rev-parse --abbrev-ref HEAD) || return
+  echo "("${ref}")"
+}
+
+# Show current git branch
+PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$(parse_git_branch)\$ "
 CLICOLOR=1
 LSCOLORS=ExFxBxDxCxegedabagacad
 

@@ -2,6 +2,11 @@
 alias gs="git status"
 alias gch="git checkout"
 alias gb="git checkout -b"
+alias gg="git grep -n -I"
+alias ts="tig status"
+
+# Elastic Beanstalk aliases
+alias es="eb status"
 
 # grep
 alias grep="grep --color=auto"
