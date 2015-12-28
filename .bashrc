@@ -162,10 +162,9 @@ shopt -s histappend
 
 # Make prompt informative
 # See:  http://www.ukuug.org/events/linux2003/papers/bash_tips/
-#PS1="\[\033[0;34m\][\u@\h:\w]$\[\033[0m\]"
 function parse_git_branch {
-  ref=$(git rev-parse --abbrev-ref HEAD) || return
-  echo "("${ref}")"
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  echo "("${ref#refs/heads/}")"
 }
 
 # Show current git branch
