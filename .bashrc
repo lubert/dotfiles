@@ -230,3 +230,11 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 ## Define any user-specific variables you want here.
 source ~/.bashrc_custom
+
+# UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+
+# Color terminal
+export TERM=xterm-256color 
