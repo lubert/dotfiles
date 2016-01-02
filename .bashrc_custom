@@ -15,3 +15,6 @@ alias fgrep="fgrep --color=auto"
 
 # mount
 alias mount="mount |column -t"
+
+# pretty json
+alias pjson='python -m json.tool'
