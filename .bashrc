@@ -203,33 +203,27 @@ export EDITOR='emacs -nw'
 export VISUAL='emacs -nw' 
 
 # 2.4) grep options
-export GREP_OPTIONS='--color=auto'
+alias grep='grep --color=auto'
 export GREP_COLOR='1;31' # green for matches
 
 # 2.5) sort options
 # Ensures cross-platform sorting behavior of GNU sort.
 # http://www.gnu.org/software/coreutils/faq/coreutils-faq.html#Sort-does-not-sort-in-normal-order_0021
-unset LANG
-export LC_ALL=POSIX
+alias sort='LC_ALL=C sort'
 
 # 2.6) Install rlwrap if not present
 # http://stackoverflow.com/a/677212
-command -v rlwrap >/dev/null 2>&1 || { echo >&2 "Install rlwrap to use node: brew install rlwrap";}
+command -v rlwrap >/dev/null 2>&1 || { echo >&2 "Install rlwrap to use node";}
 
 # 2.7) node.js and nvm
-# nvm installed via brew
 # http://nodejs.org/api/repl.html#repl_repl
 alias node="env NODE_NO_READLINE=1 rlwrap node"
 alias node_repl="node -e \"require('repl').start({ignoreUndefined: true})\""
 export NODE_DISABLE_COLORS=1
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 ## ------------------------------
 ## -- 3) User-customized code  --
 ## ------------------------------
-
-## Define any user-specific variables you want here.
-source ~/.bashrc_custom
 
 # UTF-8
 export LC_ALL=en_US.UTF-8
@@ -237,4 +231,7 @@ export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 
 # Color terminal
-export TERM=xterm-256color 
+export TERM=xterm-256color
+
+## Define any user-specific variables you want here.
+source ~/.bashrc_custom
