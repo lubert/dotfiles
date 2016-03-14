@@ -294,5 +294,26 @@ shopt -s cdable_vars
 # export documents="$HOME/Documents"
 # export dropbox="$HOME/Dropbox"
 
+# Git aliases
+alias gs="git status"
+alias gch="git checkout"
+alias gb="git checkout -b"
+alias gg="git grep -n -I"
+alias ts="tig status"
+
+# Elastic Beanstalk aliases
+alias es="eb status"
+
+# grep
+alias grep="grep --color=auto"
+alias egrep="egrep --color=auto"
+alias fgrep="fgrep --color=auto"
+
+# mount
+alias mount="mount |column -t"
+
+# pretty json
+alias pjson='python -m json.tool'
+
 ## Define any user-specific variables you want here.
 source ~/.bashrc_custom
