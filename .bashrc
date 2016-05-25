@@ -230,9 +230,6 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 
-# Color terminal
-export TERM=xterm-256color
-
 # Enable history expansion with space
 # E.g. typing !!<space> will replace the !! with your last command
 bind Space:magic-space
@@ -314,6 +311,9 @@ alias mount="mount |column -t"
 
 # pretty json
 alias pjson='python -m json.tool'
+
+# tmux colors
+alias tmux='TERM=xterm-256color tmux'
 
 ## Define any user-specific variables you want here.
 source ~/.bashrc_custom
