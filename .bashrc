@@ -299,6 +299,7 @@ alias gs="git status"
 alias gch="git checkout"
 alias gb="git checkout -b"
 alias gg="git grep -n -I"
+alias gf="git rebase -i HEAD~2"
 alias ts="tig status"
 
 # Elastic Beanstalk aliases
