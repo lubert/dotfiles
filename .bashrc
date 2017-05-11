@@ -211,16 +211,6 @@ export GREP_COLOR='1;31' # green for matches
 # http://www.gnu.org/software/coreutils/faq/coreutils-faq.html#Sort-does-not-sort-in-normal-order_0021
 alias sort='LC_ALL=C sort'
 
-# 2.6) Install rlwrap if not present
-# http://stackoverflow.com/a/677212
-command -v rlwrap >/dev/null 2>&1 || { echo >&2 "Install rlwrap to use node";}
-
-# 2.7) node.js and nvm
-# http://nodejs.org/api/repl.html#repl_repl
-alias node="env NODE_NO_READLINE=1 rlwrap node"
-alias node_repl="node -e \"require('repl').start({ignoreUndefined: true})\""
-export NODE_DISABLE_COLORS=1
-
 ## ------------------------------
 ## -- 3) User-customized code  --
 ## ------------------------------
