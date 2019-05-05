@@ -319,5 +319,28 @@ man() {
         man "$@"
 }
 
+function cheat() {
+    curl cht.sh/$1
+}
+
+# shares history between tabs with prompt_command
+HISTSIZE=9000
+HISTFILESIZE=$HISTSIZE
+HISTCONTROL=ignorespace:ignoredups
+
+_bash_history_sync() {
+    builtin history -a         #1 appends command to histfile
+    HISTFILESIZE=$HISTSIZE     #2 sets max size
+    builtin history -c         #3 clears current session history
+    builtin history -r         #4 reads the updated histfile and makes that the current history
+}
+
+history() {                  #5 overrides build in history to sync it before display
+    _bash_history_sync
+    builtin history "$@"
+}
+
+PROMPT_COMMAND=_bash_history_sync
+
 ## Define any user-specific variables you want here.
 source ~/.bashrc_custom
