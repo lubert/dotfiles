@@ -284,10 +284,13 @@ shopt -s cdable_vars
 # Git aliases
 alias gs="git status"
 alias gch="git checkout"
+alias gp="git push"
 alias gb="git checkout -b"
 alias gg="git grep -n -I"
 alias gf="git rebase -i HEAD~2"
 alias ts="tig status"
+# Set up autocomplete if bash_completion is installed
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion && __git_complete gch _git_checkout && __git_complete gp _git_push
 
 # Elastic Beanstalk aliases
 alias es="eb status"
