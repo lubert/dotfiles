@@ -1,6 +1,7 @@
 .emacs.desktop*
 *~
 \#*
+.\#*
 
 .phutil_module_cache
 .DS_Store
