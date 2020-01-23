@@ -78,10 +78,12 @@ function start_agent {
 }
 
 if [ -f "${SSH_ENV}" ]; then
-    . "${SSH_ENV}" > /dev/null
-    ps ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
-        start_agent;
-    }
+    if [ -z "${SSH_AUTH_SOCK}" ]; then
+        . "${SSH_ENV}" > /dev/null
+        ps ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+            start_agent;
+        }
+    fi
 else
     start_agent;
 fi
