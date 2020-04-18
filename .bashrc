@@ -191,16 +191,15 @@ alias vdir='ls -Glh'
 alias m='less'
 alias ..='cd ..'
 alias ...='cd ..;cd ..'
+alias ....='cd ..;cd ..;cd ..'
 alias md='mkdir'
 alias cl='clear'
 alias du='du -ch --max-depth=1'
 alias treeacl='tree -A -C -L 2'
 
 # 2.3) Text and editor commands
-alias em='emacs -nw'     # No X11 windows
-alias eqq='emacs -nw -Q' # No config and no X11
-export EDITOR='emacs -nw'
-export VISUAL='emacs -nw' 
+export EDITOR='emacs'
+export VISUAL='emacs'
 
 # 2.4) grep options
 alias grep='grep --color=auto'
