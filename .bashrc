@@ -282,9 +282,6 @@ alias ts="tig status"
 # Set up autocomplete if bash_completion is installed
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion && __git_complete gch _git_checkout && __git_complete gp _git_push
 
-# Elastic Beanstalk aliases
-alias es="eb status"
-
 # grep
 alias grep="grep --color=auto"
 alias egrep="egrep --color=auto"
@@ -295,9 +292,6 @@ alias mount="mount |column -t"
 
 # pretty json
 alias pjson='python -m json.tool'
-
-# tmux colors
-alias tmux='TERM=xterm-256color tmux'
 
 # man colors
 man() {
