@@ -82,15 +82,6 @@ fi
 #  non-interactive one is the bash environment used in scripts.
 if [ "$PS1" ]; then
 
-    if [ -x /usr/bin/tput ]; then
-      if [ "x`tput kbs`" != "x" ]; then # We can't do this with "dumb" terminal
-        stty erase `tput kbs`
-      elif [ -x /usr/bin/wc ]; then
-        if [ "`tput kbs|wc -c `" -gt 0 ]; then # We can't do this with "dumb" terminal
-          stty erase `tput kbs`
-        fi
-      fi
-    fi
     case $TERM in
 	xterm*)
 		if [ -e /etc/sysconfig/bash-prompt-xterm ]; then
