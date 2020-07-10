@@ -293,6 +293,12 @@ alias mount="mount |column -t"
 # pretty json
 alias pjson='python -m json.tool'
 
+# quick reload
+alias rebash='source ~/.bash_profile'
+
+# quick edit
+alias bashconfig='emacs ~/.bash_rc'
+
 # man colors
 man() {
     env \
