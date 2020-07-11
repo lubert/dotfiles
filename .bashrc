@@ -297,7 +297,7 @@ alias pjson='python -m json.tool'
 alias rebash='source ~/.bash_profile'
 
 # quick edit
-alias bashconfig='emacs ~/.bash_rc'
+alias bashconfig='emacs ~/.bashrc'
 
 # man colors
 man() {
