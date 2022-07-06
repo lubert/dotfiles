@@ -312,8 +312,8 @@ man() {
         man "$@"
 }
 
-function cheat() {
-    curl cht.sh/$1
+function qcsv() {
+    sqlite3 :memory: -cmd '.mode csv' -cmd ".import $1 tmp" -cmd '.mode column' "$2"
 }
 
 # shares history between tabs with prompt_command
