@@ -1,4 +1,0 @@
-export EDITOR="emacsclient -c"
-export ALTERNATE_EDITOR=""
-export VISUAL=$EDITOR
-alias emacs=$EDITOR
