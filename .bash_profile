@@ -66,9 +66,6 @@ export PATH=/usr/local/sbin:$PATH
 # Git tab completion
 source ~/.git-completion.bash
 
-# Use z
-source ~/.z.sh
-
 # ssh-agent autostart
 SSH_ENV="$HOME/.ssh/environment"
 
