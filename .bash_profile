@@ -73,17 +73,20 @@ function start_agent {
     echo "Initialising new SSH agent..."
     /usr/bin/ssh-agent | sed 's/^echo/#echo/' >| "${SSH_ENV}"
     chmod 600 "${SSH_ENV}"
-    . "${SSH_ENV}" > /dev/null
-    /usr/bin/ssh-add;
+    . "${SSH_ENV}" >/dev/null
+    if [ -f ~/.ssh/id_rsa ]; then
+        /usr/bin/ssh-add ~/.ssh/id_rsa
+    fi
+    if [ -f ~/.ssh/id_ed25519 ]; then
+        /usr/bin/ssh-add ~/.ssh/id_ed25519
+    fi
 }
 
 if [ -f "${SSH_ENV}" ]; then
-    if [ -z "${SSH_AUTH_SOCK}" ]; then
-        . "${SSH_ENV}" > /dev/null
-        ps ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
-            start_agent;
-        }
-    fi
+    . "${SSH_ENV}" >/dev/null
+    ps ${SSH_AGENT_PID} | grep ssh-agent$ >/dev/null || {
+        start_agent
+    }
 else
     start_agent;
 fi
